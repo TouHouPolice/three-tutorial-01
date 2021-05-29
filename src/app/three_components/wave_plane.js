@@ -122,13 +122,13 @@ export default function WavePlane(props) {
         const index = 3 * i;
         array[index] =
           originalPosition[index] +
-          Math.cos(time + randomValues[index]) * 0.001;
+          Math.cos(time + randomValues[index]) * 0.0015;
         array[index + 1] =
           originalPosition[index + 1] +
-          Math.sin(time + randomValues[index + 1]) * 0.007;
+          Math.sin(time + randomValues[index + 1]) * 0.011;
         array[index + 2] =
           originalPosition[index + 2] +
-          Math.cos(time + randomValues[index + 2]) * 0.001;
+          Math.cos(time + randomValues[index + 2]) * 0.0015;
       }
       mesh.current.geometry.attributes.position.needsUpdate = true;
     }

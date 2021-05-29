@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./App.scss";
 
-import {} from "./static/images"
-import {} from "./static/sounds"
-import {} from "./static/videos"
+import {} from "./static/images";
+import {} from "./static/sounds";
+import {} from "./static/videos";
 
-import Home from "./app/home"
+import Home from "./app/home";
 
 function App() {
   return (

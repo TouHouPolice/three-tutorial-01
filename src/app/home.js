@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-import { Canvas, extend, useThree } from "@react-three/fiber";
-import { OrbitControls } from "three-stdlib/controls/OrbitControls";
+import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
+import { OrbitControls } from "three-stdlib/controls/OrbitControls.js";
 
 import Cube from "./three_components/cube";
 import WavePlane from "./three_components/wave_plane";
@@ -24,7 +24,7 @@ export default function Home() {
     r: 0.1,
     g: 0.5,
     b: 1,
-    light: 0.27
+    light: 0.32
   });
 
   function handleDatUpdate(newData) {
@@ -84,6 +84,12 @@ function Scene(props) {
     gl: { domElement }
   } = useThree();
 
+  const orbitControlsRef = useRef();
+
+  // useFrame((state, dealta) => {
+  //   orbitControlsRef.current.update();
+  // });
+
   return (
     <>
       <WavePlane
@@ -98,7 +104,11 @@ function Scene(props) {
         rotation={[-0.1, 0, 2]}
       ></WavePlane>
       <orbitControls
-        enableZoom={true}
+        ref={orbitControlsRef}
+        rotateSpeed={0.2}
+        enableZoom={false}
+        enablePan={false}
+        enableDamping={true}
         minPolarAngle={1.285398}
         maxPolarAngle={1.75619}
         minAzimuthAngle={-0.285398}

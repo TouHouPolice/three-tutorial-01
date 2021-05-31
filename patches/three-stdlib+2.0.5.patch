@@ -1,0 +1,13 @@
+diff --git a/node_modules/three-stdlib/controls/OrbitControls.js b/node_modules/three-stdlib/controls/OrbitControls.js
+index 5d84ff5..82eb91a 100644
+--- a/node_modules/three-stdlib/controls/OrbitControls.js
++++ b/node_modules/three-stdlib/controls/OrbitControls.js
+@@ -629,6 +629,8 @@ class OrbitControls extends EventDispatcher {
+ 
+       switch (event.pointerType) {
+         case 'mouse':
++          onMouseMove(event);
++          break;
+         case 'pen':
+           onMouseMove(event);
+           break;
